@@ -1,0 +1,19 @@
+@import "./variable";
+%btn {
+  color: $primary-font-color;
+  background-color: $secondary-bg-color;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
+  font-weight: 400;
+  border-radius: 3px;
+  &:hover {
+    background-color: $secondary-bg-color;
+    color: lighten($primary-font-color, 20%);
+  }
+}
+@mixin text-break {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

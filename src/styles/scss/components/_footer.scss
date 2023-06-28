@@ -1,0 +1,74 @@
+footer {
+  position: absolute;
+  bottom: 0.1%;
+  left: 0%;
+  width: 100%;
+  height: 11.8rem;
+  // border: solid 1px #fff;
+  display: grid;
+  grid-template-rows: 3.3rem 1fr;
+  transition: all 0.4s ease-in-out;
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5.5rem;
+    // width: 100%;
+    color: $footer-font-color;
+    background-color: $footer-bg-color;
+
+    .left-icons,
+    .right-icons {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 1.4rem;
+    }
+    .ball-con {
+      transition: all 0.3s ease-in-out;
+      width: 36px;
+      height: 16px;
+      border-radius: 10px;
+      background-color: $footer-alt-bg-color;
+      position: relative;
+      cursor: pointer;
+      .ball {
+        position: absolute;
+        background-color: lighten($color: $footer-alt-bg-color, $amount: 10%);
+        top: 0%;
+        left: 0%;
+        width: 16px;
+        height: 100%;
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+      }
+      .ball-open {
+        @extend .ball;
+        left: 100%;
+        background-color: #e4e2e2;
+        transform: translateX(-100%);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    .ball-con-open {
+      @extend .ball-con;
+      background-color: $chat-bg-open-color;
+    }
+  }
+  .bottom {
+    background-color: darken($color: $footer-font-color, $amount: 45%);
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    line-height: 20px;
+    align-items: center;
+    font-size: 1rem;
+    text-align: center;
+    p:first-child {
+      font-size: 1.4rem;
+    }
+    p:not(:first-child) {
+      opacity: 0.5;
+    }
+  }
+}

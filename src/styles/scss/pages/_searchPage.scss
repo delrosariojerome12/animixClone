@@ -1,0 +1,21 @@
+@import "../variable";
+@import "../utils";
+.searchPage {
+  display: flex;
+  gap: 1rem;
+  // border: solid 1px #fff;
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  .right-side {
+    transition: all 0.5s ease-in-out;
+
+    .sidebar {
+      width: 270px;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}

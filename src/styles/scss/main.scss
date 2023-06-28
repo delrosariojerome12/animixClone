@@ -1,0 +1,160 @@
+@import "resets";
+@import "variable";
+@import "./components/navbar";
+@import "./components/loading";
+@import "./components/newsbar";
+@import "./components/dropdown";
+@import "./components/animeContainer";
+@import "./components/sidebar";
+@import "./components/schedule";
+@import "./components/footer";
+// pages
+@import "./pages/home";
+@import "./pages/searchPage";
+
+.container {
+  min-height: 125vh;
+  display: grid;
+  font-family: $primary-font;
+  background-color: $primary-bg-color;
+  color: $secondary-font-color;
+  padding: 60px 55px 0px 55px;
+  grid-template-rows: minmax(70vh, auto) 130px;
+  gap: 10px;
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+  }
+  .goToTop-btn {
+    cursor: pointer;
+    position: fixed;
+    // left: 96%;
+    left: 100%;
+    top: 95%;
+    transform: translate(-120%, -50%);
+    padding: 0.5rem 1rem;
+    min-height: 3.2rem;
+    width: 5rem;
+    background: lighten($color: rgba(32, 32, 32, 0.623), $amount: 10%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    color: #e4e4e4;
+    z-index: 997;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  .goToTop-btn-show {
+    @extend .goToTop-btn;
+    opacity: 1;
+  }
+}
+.error-page {
+  height: 100vh;
+  font-family: $primary-font;
+  background-color: $primary-bg-color;
+  color: $secondary-font-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  padding: 10px;
+
+  img {
+    max-width: 100%;
+  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: $primary-bg-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: lighten($color: $dark-bg-color, $amount: 2%);
+  border-radius: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  background: lighten($color: $dark-bg-color, $amount: 10%);
+  border-radius: 10px;
+}
+
+// loading
+.loading-screen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-bg-color;
+  color: $secondary-font-color;
+}
+
+.spinner {
+  position: relative;
+  width: 15.7px;
+  height: 15.7px;
+}
+
+.spinner div {
+  animation: spinner-4t3wzl 1.875s infinite backwards;
+  background-color: #2196f3;
+  border-radius: 50%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.spinner div:nth-child(1) {
+  animation-delay: 0.15s;
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.spinner div:nth-child(2) {
+  animation-delay: 0.3s;
+  background-color: rgba(33, 150, 243, 0.8);
+}
+
+.spinner div:nth-child(3) {
+  animation-delay: 0.45s;
+  background-color: rgba(33, 150, 243, 0.7);
+}
+
+.spinner div:nth-child(4) {
+  animation-delay: 0.6s;
+  background-color: rgba(33, 150, 243, 0.6);
+}
+
+.spinner div:nth-child(5) {
+  animation-delay: 0.75s;
+  background-color: rgba(33, 150, 243, 0.5);
+}
+
+@keyframes spinner-4t3wzl {
+  0% {
+    transform: rotate(0deg) translateY(-200%);
+  }
+
+  60%,
+  100% {
+    transform: rotate(360deg) translateY(-200%);
+  }
+}
+
+@import "./screen/desktop";
+@import "./screen/mobile";

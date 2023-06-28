@@ -1,0 +1,86 @@
+@import "../variable";
+@import "../utils";
+.schedule {
+  overflow: auto;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  transform: translateX(-200%);
+  width: 332px;
+  min-height: 100vh;
+  z-index: 999;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+  background-color: $primary-bg-color;
+  padding: 0.5rem;
+
+  .time-con {
+    border-bottom: solid 1px #fff;
+    padding: 0.2rem 1rem;
+    // gap: 5px;
+    position: relative;
+    display: grid;
+    width: 95%;
+    margin: auto;
+    grid-template-rows: 47px 23px;
+    & > * {
+      margin: auto;
+    }
+    .short-time {
+      font-size: 2.8rem;
+      font-weight: 400;
+    }
+    .long-time {
+      font-size: 1.6rem;
+      span {
+        color: #ffed8b;
+      }
+    }
+    svg {
+      position: absolute;
+      top: 23%;
+      left: 4%;
+      color: $ternary-font-color;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        color: darken($color: $ternary-font-color, $amount: 15%);
+      }
+    }
+  }
+  .days {
+    font-size: 1.4rem;
+    height: 20vh;
+    line-height: 2rem;
+    padding: 0.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    span {
+      background-color: $ligthen-dark-bg-color;
+      padding: 1rem;
+      margin: auto;
+      width: 100%;
+      text-align: center;
+    }
+    .day {
+      & > p:first-child {
+        border-bottom: solid 1px #fff;
+        font-size: 1.6rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+    }
+    .anime-time {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      p:first-child {
+        cursor: pointer;
+        color: $anime-font-color;
+        @include text-break;
+      }
+    }
+  }
+}

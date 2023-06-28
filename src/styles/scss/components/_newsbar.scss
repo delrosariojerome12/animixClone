@@ -1,0 +1,73 @@
+@import "../utils";
+.newsbar {
+  display: grid;
+  grid-template-columns: 109px 1fr;
+  grid-auto-rows: 154px;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease-in-out;
+  }
+  .text-container {
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.568);
+      z-index: 1;
+    }
+  }
+  .text {
+    height: 100%;
+    width: 100%;
+    background-color: #1e1e1e65;
+    backdrop-filter: blur(12px);
+    padding: 10px;
+    font-size: 12px;
+    display: grid;
+    grid-template-rows: minmax(32px, auto) minmax(50px, 2fr) 25px;
+    gap: 4px;
+    position: relative;
+    z-index: 2;
+    h3 {
+      color: $primary-font-color;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    .tag-container {
+      display: grid;
+      grid-template-columns: 6fr minmax(40px, 50px);
+
+      .tags {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        gap: 5px;
+        align-items: center;
+
+        & > *:not(:first-child):not(:last-child):after {
+          content: ", ";
+        }
+        @include text-break;
+      }
+      .nav-btn-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        & > span {
+          cursor: pointer;
+          svg {
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+}
